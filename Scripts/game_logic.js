@@ -13,8 +13,8 @@ let paddleWidth = 80;
 let paddleHeight = 30;
 let paddleX = (canvas.width - paddleWidth) / 2;
 
-let paddle_bg_path = "/Assets/png/slipper.png";
-let avatar_path = ["#ff0000", "/Images/hasi.png", "/Images/quader.png"];
+let paddle_bg_path = "../Assets/png/slipper.png";
+let avatar_path = ["#ff0000", "../Images/hasi.png", "../Images/quader.png"];
 
 
 // Player ball

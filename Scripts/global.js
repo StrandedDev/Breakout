@@ -1,9 +1,9 @@
 // Asset variables
 
-const music_src = "/Assets/Music/sangshad_music.mp3";
-const sfx_bounce_src = "/Assets/sfx/bounce.mp3";
-const sfx_slap_src = "Assets/sfx/slap.mp3";
-const sfx_tap_src = "/Assets/sfx/tap.ogg";
+const music_src = "../Assets/Music/sangshad_music.mp3";
+const sfx_bounce_src = "../Assets/sfx/bounce.mp3";
+const sfx_slap_src = "../Assets/sfx/slap.mp3";
+const sfx_tap_src = "../Assets/sfx/tap.ogg";
 
 
 

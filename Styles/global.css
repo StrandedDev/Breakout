@@ -3,12 +3,12 @@
 
 @font-face {
     font-family: lonely;
-    src: url('/Assets/Fonts/Lonely.otf');
+    src: url('../Assets/Fonts/Lonely.otf');
 }
 
 @font-face {
     font-family: adelia;
-    src: url('/Assets/Fonts/Adelia.otf');
+    src: url('../Assets/Fonts/Adelia.otf');
 }
 
 

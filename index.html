@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakout</title>
+
+    <!-- Favicon -->
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/Styles/global.css">
+    <link rel="stylesheet" href="/Styles/intro.css">
+    <link rel="stylesheet" href="/Styles/menu_styles.css">
+
+
+</head>
+<body onload="init_basic_game()">
+
+    <audio id="music"></audio>
+    <audio id="sfx_bounce"></audio>
+    <audio id="sfx_slap"></audio>
+    <audio id="sfx_tap"></audio>
+
+
+<!-- Intro dialogue to play the game -->
+
+    <section id="intro-popup-container" class="flex_visible">
+        <h1 id="intro-text">Ting Tong</h1>
+        <button id="game-play-btn">Play</button>
+    </section>
+    
+<!-- Intro dialogue to play the game -->
+
+
+
+
+
+<!-- Menu -->
+
+    <!-- Settings menu Open and close button -->
+    <button id="menu-toggle-button">
+      <div id="menu-icon-bars" class="menu_icon flex_visible">
+          <svg fill="#ffffff" width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Menu_Duo_LG"> <path id="Vector" d="M3 15H21M3 9H21" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
+        </div>
+        <div id="menu-icon-cross" class="menu_icon flex_hidden">
+            <svg fill="#ffffff" width="30px" height="30px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M0 14.545L1.455 16 8 9.455 14.545 16 16 14.545 9.455 8 16 1.455 14.545 0 8 6.545 1.455 0 0 1.455 6.545 8z" fill-rule="evenodd"></path> </g></svg>
+        </div>
+    </button>
+    <!-- Open and close button -->
+   
+   <!-- Menu dialogue box -->
+    <section id="menu-container" class="flex_hidden">
+        <div>
+            <p>Music</p>
+            <label class="toggle-switch">
+                <input type="checkbox" id="music-toggle-btn" checked>
+                <div class="toggle-switch-background">
+                    <div class="toggle-switch-handle"></div>
+                </div>
+            </label>
+        </div>
+        <div>
+            <p>Sound effects</p>
+            <label class="toggle-switch">
+                <input type="checkbox" id="sfx-toggle-btn" checked>
+                <div class="toggle-switch-background">
+                    <div class="toggle-switch-handle"></div>
+                </div>
+            </label>
+        </div>
+        <div id="avatar-container">
+            <button class="avatar" onclick="changeAvatar(0)">
+                <svg viewBox="0 0 15 15" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" stroke="#e40c0c"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.49991 0.877075C3.84222 0.877075 0.877075 3.84222 0.877075 7.49991C0.877075 11.1576 3.84222 14.1227 7.49991 14.1227C11.1576 14.1227 14.1227 11.1576 14.1227 7.49991C14.1227 3.84222 11.1576 0.877075 7.49991 0.877075ZM3.85768 3.15057C4.84311 2.32448 6.11342 1.82708 7.49991 1.82708C10.6329 1.82708 13.1727 4.36689 13.1727 7.49991C13.1727 8.88638 12.6753 10.1567 11.8492 11.1421L3.85768 3.15057ZM3.15057 3.85768C2.32448 4.84311 1.82708 6.11342 1.82708 7.49991C1.82708 10.6329 4.36689 13.1727 7.49991 13.1727C8.88638 13.1727 10.1567 12.6753 11.1421 11.8492L3.15057 3.85768Z" fill="#000000"></path> </g></svg>
+            </button>
+            <button class="avatar" onclick="changeAvatar(1)">
+                <img src="./Images/hasi.png" class="avatar_image">
+            </button>
+            <button class="avatar" onclick="changeAvatar(2)">
+                <img src="./Images/quader.png" class="avatar_image">
+            </button>
+        </div>
+    </section>
+    <!-- Menu dialogue box -->
+    
+<!-- Menu -->
+
+
+
+
+<!-- Game canvas -->
+    <canvas id="gameCanvas"></canvas>
+<!-- Game canvas -->
+
+
+
+<!-- Mobile controls -->
+
+    <div id="controller-btn-container" class="flex_hidden">
+        <button class="control_btn" id="moveLeftButton">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18 17L13 12L18 7M11 17L6 12L11 7" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        </button>
+        <button class="control_btn" id="moveRightButton">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        </button>
+    </div>
+    
+<!-- Mobile controls -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Scripts -->
+     <script src="/Scripts/global.js"></script>
+     <script src="/Scripts/game_logic.js"></script>
+     <script src="/Scripts/init.js"></script>
+     <script src="/Scripts/menu_script.js"></script>
+</body>
+</html>

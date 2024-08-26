@@ -1,0 +1,45 @@
+
+/* Font family */
+
+@font-face {
+    font-family: lonely;
+    src: url('/Assets/Fonts/Lonely.otf');
+}
+
+@font-face {
+    font-family: adelia;
+    src: url('/Assets/Fonts/Adelia.otf');
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input, button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in-out;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+canvas { 
+    display: block; 
+    margin: 20px auto; 
+    background-color: #fff; 
+}
+
+.flex_visible{
+    display: flex;
+}
+
+.flex_hidden{
+    display: none;
+}

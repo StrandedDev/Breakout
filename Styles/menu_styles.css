@@ -1,0 +1,191 @@
+
+/* Menu container */
+
+#menu-container{
+    background-color: rgb(24, 31, 68);
+    min-height: 200px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #0000007c;
+    padding: 20px;
+    z-index: 999;
+}
+
+
+#menu-container > div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+}
+
+#menu-container > div > p{
+    font-size: 18px;
+    font-family: lonely, sans-serif;
+    color: #fff;
+    text-shadow: 2px 2px 0 #0000007c;
+}
+
+
+/* Toggle button */
+
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  .toggle-switch input[type="checkbox"] {
+    display: none;
+  }
+  
+  .toggle-switch-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 2px #ccc;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .toggle-switch-handle {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .toggle-switch::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    right: -35px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #aaa;
+    text-shadow: 1px 1px #fff;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-switch-handle {
+    transform: translateX(45px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 3px #05c46b;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-switch-background {
+    background-color: #05c46b;
+    box-shadow: inset 0 0 0 2px #04b360;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-switch:before {
+    content: "On";
+    color: #05c46b;
+    right: -15px;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + .toggle-switch-background .toggle-switch-handle {
+    transform: translateX(40px);
+  }
+
+
+/* Menu button */
+
+
+#menu-toggle-button{
+    background-color: blueviolet;
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    transition: box-shadow 0.2s ease-out;
+    box-shadow: 0 3px 5px 0 #0000007c,
+                inset 0 -5px 0 0 #ffffff3f;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+            
+#menu-toggle-button:active{
+    box-shadow: inset 0 -5px 0 0 #ffffff3f;
+}
+
+
+.menu_icon{
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Game avatars */
+
+
+#avatar-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+#avatar-container > .avatar > img, svg{
+    height: 60px;
+    border-radius: 50%;
+}
+
+
+
+
+/* Game controls for mobile */
+
+#controller-btn-container{
+  height: auto;
+  width: 100dvw;
+  max-width: 400px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: space-between;
+}
+
+.control_btn{
+  background-color: rgb(93, 145, 64);
+  height: 80px;
+  width: 80px;
+  border-radius: 50px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control_btn:hover{
+  background-color: rgb(68, 105, 49);
+}
+
+.control_btn > svg{
+  transform: scale(1.2);
+}
+
+
+
+

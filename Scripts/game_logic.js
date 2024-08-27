@@ -183,7 +183,7 @@ function reload(){
 
 function drawPaddle() {
     let paddle_img = new Image();
-    paddle_img.src = paddle_bg_path;
+    paddle_img.src = "/Png/slipper.png";
     ctx.drawImage(paddle_img, paddleX, canvas.height - paddleHeight - 10, paddleWidth, paddleHeight);
 }
 

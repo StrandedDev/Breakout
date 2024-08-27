@@ -13,7 +13,7 @@ let paddleWidth = 80;
 let paddleHeight = 30;
 let paddleX = (canvas.width - paddleWidth) / 2;
 
-let paddle_bg_path = "../Assets/png/slipper.png";
+let paddle_bg_path = "../Png/slipper.png";
 let avatar_path = ["#ff0000", "../Images/hasi.png", "../Images/quader.png"];
 
 
@@ -196,41 +196,50 @@ function drawBall() {
 }
 
 
-// Draw red ball
 function drawRedBall(){
-
-    console.log("redball: " + currentAvatar)
-
-    if(currentAvatar == 0){
-        ctx.beginPath();
-        ctx.arc(redBall.x, redBall.y, redBallRadius, 0, Math.PI * 2);
-        ctx.fillStyle = 'red';
-        ctx.fill();
-        ctx.closePath();
-    }
-    else if(currentAvatar == 1){
-         // Draw the circular clipping path
     ctx.beginPath();
-   // ctx.arc(200, 200, 150, 0, Math.PI * 2, true); // Centered circle
     ctx.arc(redBall.x, redBall.y, redBallRadius, 0, Math.PI * 2);
-    ctx.clip();
-
-    // Draw the image within the clipped area
-    ctx.drawImage(avatar_path[1], 0, 0, 300, 300); // Adjust size as needed
-    }
-    else if(2){
-
-        let quader_img = new Image();
-        quader_img.src = avatar_path[2];
-        ctx.beginPath();
-        ctx.arc(redBall.x, redBall.y, redBallRadius, 0, Math.PI * 2);
-        ctx.clip();
-        ctx.drawImage(quader_img, 0, 0, 30, 30); // Adjust size as needed
-        ctx.closePath();
-        console.log(currentAvatar);
-
-    }
+    ctx.fillStyle = 'red';
+    ctx.fill();
+    ctx.closePath();
 }
+
+
+// Draw red ball
+// function drawRedBall(){
+
+//     console.log("redball: " + currentAvatar)
+
+//     if(currentAvatar == 0){
+//         ctx.beginPath();
+//         ctx.arc(redBall.x, redBall.y, redBallRadius, 0, Math.PI * 2);
+//         ctx.fillStyle = 'red';
+//         ctx.fill();
+//         ctx.closePath();
+//     }
+//     else if(currentAvatar == 1){
+//          // Draw the circular clipping path
+//     ctx.beginPath();
+//    // ctx.arc(200, 200, 150, 0, Math.PI * 2, true); // Centered circle
+//     ctx.arc(redBall.x, redBall.y, redBallRadius, 0, Math.PI * 2);
+//     ctx.clip();
+
+//     // Draw the image within the clipped area
+//     ctx.drawImage(avatar_path[1], 0, 0, 300, 300); // Adjust size as needed
+//     }
+//     else if(2){
+
+//         let quader_img = new Image();
+//         quader_img.src = avatar_path[2];
+//         ctx.beginPath();
+//         ctx.arc(redBall.x, redBall.y, redBallRadius, 0, Math.PI * 2);
+//         ctx.clip();
+//         ctx.drawImage(quader_img, 0, 0, 30, 30); // Adjust size as needed
+//         ctx.closePath();
+//         console.log(currentAvatar);
+
+//     }
+// }
 
 
 

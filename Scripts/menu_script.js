@@ -3,18 +3,6 @@
 let currentAvatar = 0;
 
 
-// Logic to initialize game menu
-
-function init_basic_game(){
-   // music.src = music_src;
-    sfx_tap_elem.src = sfx_tap_src;
-    sfx_slap_elem.src = sfx_slap_src;
-    sfx_bounce_elem.src = sfx_bounce_src;
-    
-}
-
-
-
 
 
 // Logic to toggle the settings menu

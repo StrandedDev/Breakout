@@ -1,9 +1,9 @@
 // Asset variables
 
-const music_src = "../Assets/Music/sangshad_music.mp3";
-const sfx_bounce_src = "../Assets/sfx/bounce.mp3";
-const sfx_slap_src = "../Assets/sfx/slap.mp3";
-const sfx_tap_src = "../Assets/sfx/tap.ogg";
+// const music_src = "../Music/sangshad_music.mp3";
+// const sfx_bounce_src = "../SFX/bounce.mp3";
+// const sfx_slap_src = "../SFX/slap.mp3";
+// const sfx_tap_src = "../SFX/tap.ogg";
 
 
 
@@ -25,8 +25,10 @@ const controller_btn_container = document.getElementById('controller-btn-contain
 
 function toggle_music(){
     if(menu_toggle_btn.checked){
-        console.log('hello world')
+        music_elem.play();
+    }
+    else{
+        music_elem.pause();
     }
 }
 
-toggle_music()

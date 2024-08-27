@@ -4,7 +4,7 @@ game_play_btn.addEventListener('click', start_game);
 function start_game(){
 
     // play bgm 
-    // music.play();
+    music.play();
     canvas.style.border = "1px solid #000";
 
     toggle_intro_dialogue();

@@ -17,12 +17,12 @@
 
 
 </head>
-<body onload="init_basic_game()">
+<body>
 
-    <audio id="music"></audio>
-    <audio id="sfx_bounce"></audio>
-    <audio id="sfx_slap"></audio>
-    <audio id="sfx_tap"></audio>
+    <audio id="music" src="./Music/sangshad_music.mp3"></audio>
+    <audio id="sfx_bounce" src="./Sfx/bounce.mp3"></audio>
+    <audio id="sfx_slap" src="./Sfx/slap.mp3"></audio>
+    <audio id="sfx_tap" src="./Sfx/tap.ogg"></audio>
 
 
 <!-- Intro dialogue to play the game -->
@@ -56,7 +56,7 @@
         <div>
             <p>Music</p>
             <label class="toggle-switch">
-                <input type="checkbox" id="music-toggle-btn" checked>
+                <input type="checkbox" id="music-toggle-btn" checked onclick="toggle_music()">
                 <div class="toggle-switch-background">
                     <div class="toggle-switch-handle"></div>
                 </div>

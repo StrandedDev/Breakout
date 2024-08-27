@@ -13,7 +13,7 @@ let paddleWidth = 80;
 let paddleHeight = 30;
 let paddleX = (canvas.width - paddleWidth) / 2;
 
-let paddle_bg_path = "../Png/slipper.png";
+const paddle_bg_path = "/Png/slipper.png";
 let avatar_path = ["#ff0000", "../Images/hasi.png", "../Images/quader.png"];
 
 
